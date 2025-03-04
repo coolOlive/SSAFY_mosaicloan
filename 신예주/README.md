@@ -83,13 +83,13 @@ https://www.blog.data101.io/394
     - 세금 공제 금액  
 
 주의사항
-- 데이터를 원하는 형태로 변환 후 사용해야됨
+- 데이터를 원하는 형태로 변환 후 사용해야됨  
 
+참고
 
-참고    
-https://www.kaggle.com/code/sagarmamodia/home-credit-default-loan-notebook/input
+https://www.kaggle.com/code/sagarmamodia/home-credit-default-loan-notebook
+
 ---
-
 ### HMEQ Data
 
 주택담보대출 관련 데이터
