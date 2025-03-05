@@ -1,5 +1,6 @@
 ### 목차
 1. [250304_화](#250304_화)
+1. [250305_수](#250305_수수)
 
 # 250304_화
 ---
@@ -68,3 +69,52 @@
 #### 📌 요약  
 ✅ 기간 필터 O, 본문 수집 O, 대량 수집 O  
 ❌ 차단 위험, 유지보수 필요 
+
+# 250305_수
+---
+
+# ✅ ThreadPoolExecutor & 파이썬 GIL 정리  
+
+
+## ✅ 1. ThreadPoolExecutor 사용  
+
+```python
+with ThreadPoolExecutor(max_workers=10) as executor:
+    future_to_url = {executor.submit(process_article, url): url for url in urls}
+```
+
+✔️ 설명  
+✅ 최대 10개의 스레드를 생성해 동시에 작업 수행  
+✅ 여러 기사를 동시에 처리하여 속도 향상 기대  
+
+## ✅ 2. 파이썬 GIL(Global Interpreter Lock)의 영향  
+
+✔️ 특징  
+✅ CPU 연산  
+➡️ GIL 때문에 병렬 처리 ❌ (순차적 처리)  
+
+✅ 네트워크 I/O 작업  
+➡️ GIL 영향 적음, 병렬 처리 ✅  
+
+## ✅ 3. 코드 예시  
+
+```python
+def process_article(url):
+    try:
+        article = Article(url, language='ko')
+        article.download()   # ✅ 네트워크 I/O - 병렬 처리됨!
+        article.parse()      # ❌ CPU 작업 - 순차 처리됨
+```
+
+## ✅ 4. 요약  
+
+| 항목 | 내용 |
+|------|------|
+| ✅ 다운로드 | 네트워크 I/O 작업 → 병렬 처리 |
+| ❌ 파싱 | CPU 연산 작업 → 순차 처리 |
+
+
+📌 참고  
+- 10개의 기사를 동시에 다운로드 받을 수 있음  
+- 파싱 작업은 순차적으로 처리됨  
+- 대부분 시간이 다운로드에 소요 → 전체 속도는 빨라짐  
