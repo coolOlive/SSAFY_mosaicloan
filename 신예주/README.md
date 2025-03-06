@@ -1,5 +1,6 @@
 ### 목차
 1. [250304_화](#250304_화)
+2. [250305_수](#250305_수)
 
 # 250304_화
 
@@ -101,5 +102,18 @@ https://www.kaggle.com/code/sagarmamodia/home-credit-default-loan-notebook
     - csv 파일로 되어있음
 
 참고  
-https://www.kaggle.com/datasets/ajay1735/hmeq-data
+https://www.kaggle.com/datasets/ajay1735/hmeq-data  
+</br>
+</br>
 
+# 250305_수
+## 1. 데이터셋
+### Home Credit Default Loan
+csv 데이터 수집 및 정리를 통해 시각화를 진행하고자 했으나 데이터의 용량이 커서 다른 데이터를 이용하기로 함
+### HMEQ 
+데이터의 특성을 파악하기 위한 간단한 시각화를 진행하였으나, 원하는 정보를 담고 있지 않아 새로운 데이터를 탐색하기로 함
+### Loan Classification Dataset  
+대출 가능 여부를 파악하기 위한 데이터로 한번 더 검토가 필요함  
+
+## 2. 피그마
+피그마 피드백을 통해 프로젝트 프레임 워크를 다함께 정함
