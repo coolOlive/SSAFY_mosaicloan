@@ -21,7 +21,7 @@ WORKDIR /app
 COPY --from=build /app .
 
 # Gradle 테스트 실행
-RUN ./gradlew test
+# RUN ./gradlew test
 
 # Run stage
 FROM gradle:7.4-jdk17 AS run

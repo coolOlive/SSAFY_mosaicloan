@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   member-api:
     build:
@@ -9,6 +8,8 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:mysql://member-db:3306/mosaic_member
       - SPRING_DATASOURCE_USERNAME=member
       - SPRING_DATASOURCE_PASSWORD=608
+    env_file:
+      - ./back/member-service/.env
     ports:
       - "18081:8080"
 
