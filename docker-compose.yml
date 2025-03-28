@@ -102,7 +102,7 @@ services:
       dockerfile: Dockerfile
     image: ${DOCKERHUB_USERNAME:-default}/mosaic-zookeeper:${IMAGE_TAG:-local}
     environment:
-      ALLOW_ANONYMOUS_LOGIN: yes
+      ALLOW_ANONYMOUS_LOGIN: "yes"
     ports:
       - "2181:2181"
 
@@ -113,7 +113,7 @@ services:
     image: ${DOCKERHUB_USERNAME:-default}/mosaic-kafka:${IMAGE_TAG:-local}
     environment:
       KAFKA_CFG_ZOOKEEPER_CONNECT: zookeeper:2181
-      ALLOW_PLAINTEXT_LISTENER: yes
+      ALLOW_PLAINTEXT_LISTENER: "yes"
     ports:
       - "9092:9092"
     depends_on:
