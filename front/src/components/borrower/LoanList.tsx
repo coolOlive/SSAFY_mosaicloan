@@ -267,12 +267,16 @@ const LoanList: React.FC<LoanListProps> = ({
                 <tr key={loan.id}>
                   <td>{loan.id}</td>
                   <td>
-                    {Math.round(
+                    {/* {Math.round(
                       Number(loan.requestAmount) || 0,
+                    ).toLocaleString()} */}
+                    {Math.floor(
+                      Number(loan.requestAmount || 0),
                     ).toLocaleString()}
                   </td>
                   <td>
-                    {format(parseISO(loan.createdAt), 'yyyy-MM-dd') || '-'}
+                    {/* {format(parseISO(loan.createdAt), 'yyyy-MM-dd') || '-'} */}
+                    {(loan.createdAt && loan.createdAt.split('T')[0]) || '-'}
                   </td>
                   <td>{loan.dueDate}</td>
                   <td>
